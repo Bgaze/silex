@@ -3,8 +3,8 @@
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\HttpFragmentServiceProvider;
-use Symfony\Component\Finder\Finder;
 use Silex\Provider\AssetServiceProvider;
+use Bgaze\Silex\Provider\FinderProvider;
 
 // Controllers.
 $app->register(new ServiceControllerServiceProvider());
@@ -26,6 +26,4 @@ $app['twig'] = $app->extend('twig', function ($twig, $app) {
 });
 
 // Finder.
-$app['finder'] = function () {
-    return new Finder();
-};
+$app->register(new FinderProvider());

@@ -4,8 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dde26e4161fdb8c2d3602eec77c23be8",
+    "content-hash": "c35ecdd0ee272f18c353fe2e05cb24bf",
     "packages": [
+        {
+            "name": "bgaze/silex-finder-provider",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bgaze/silex-finder-provider.git",
+                "reference": "17553d2daedd674ff873ca3836c264757ccdb0ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bgaze/silex-finder-provider/zipball/17553d2daedd674ff873ca3836c264757ccdb0ee",
+                "reference": "17553d2daedd674ff873ca3836c264757ccdb0ee",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.0",
+                "silex/silex": "~2.0",
+                "symfony/finder": "~3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bgaze\\Silex\\Provider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Gazé",
+                    "email": "benjamin@bgaze.fr",
+                    "homepage": "https://www.bgaze.fr",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This is a Silex service provider for Symfony finder component",
+            "keywords": [
+                "Sort Desc",
+                "finder",
+                "php",
+                "provider",
+                "service",
+                "serviceprovider",
+                "silex"
+            ],
+            "time": "2017-08-26T23:24:53+00:00"
+        },
         {
             "name": "monolog/monolog",
             "version": "1.23.0",
