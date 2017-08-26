@@ -6,16 +6,14 @@ can use as the skeleton for your new applications.
 
 This document contains information on how to start using the Silex Skeleton.
 
-Creating a Silex Application
+Get the project
 ----------------------------
 
 Silex uses `Composer`_ to ease the creation of a new project:
 
 .. code-block:: console
 
-    $ composer create-project fabpot/silex-skeleton path/to/install "~2.0"
-
-Composer will create a new Silex project under the `path/to/install` directory.
+    $ git clone https://github.com/bgaze/silex-skeleton.git path/to/install
 
 Browsing the Demo Application
 -----------------------------
@@ -31,6 +29,8 @@ command:
     $ COMPOSER_PROCESS_TIMEOUT=0 composer run
 
 Then, browse to http://localhost:8888/index_dev.php/
+
+> If you want to use your local webserver, please see documentation : https://silex.symfony.com/doc/2.0/web_servers.html
 
 Getting started with Silex
 --------------------------
