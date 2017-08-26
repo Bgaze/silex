@@ -1,27 +1,24 @@
 #!/usr/bin/env php
 <?php
-// Define application root path.
-define('ROOT', realpath(__DIR__ . '/..'));
-
-// Load dependencies.
-require_once ROOT . '/vendor/autoload.php';
+// Define required constants.
+define('ROOT', __DIR__ . '/..');
+define('CLI', false);
+define('ENV', 'prod');
 
 // Disable time limit.
 set_time_limit(0);
 
+// Load dependencies.
+require_once ROOT . '/vendor/autoload.php';
+
 // Manage console input.
 use Symfony\Component\Console\Input\ArgvInput;
 $input = new ArgvInput();
-$env = $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev');
+define('ENV', $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev'));
 
 // Create application.
 require ROOT . '/src/app.php';
 
-// Load configuration.
-require ROOT . '/src/config/' . $env . '.php';
-
-// Load console.
+// Run console.
 $console = require ROOT . '/src/console.php';
-
-// Run.
 $console->run();

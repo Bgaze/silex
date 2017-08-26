@@ -9,8 +9,10 @@ if (isset($_SERVER['HTTP_CLIENT_IP']) || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
     exit('You are not allowed to access this file. Check ' . basename(__FILE__) . ' for more information.');
 }
 
-// Define application root path.
-define('ROOT', realpath(__DIR__ . '/..'));
+// Define required constants.
+define('ROOT', __DIR__ . '/..');
+define('CLI', false);
+define('ENV', 'dev');
 
 // Load dependencies.
 require_once ROOT . '/vendor/autoload.php';
@@ -18,14 +20,6 @@ require_once ROOT . '/vendor/autoload.php';
 // Enable debugging.
 Debug::enable();
 
-// Create application.
+// Run application.
 $app = require ROOT . '/src/app.php';
-
-// Load configuration.
-require ROOT . '/src/config/dev.php';
-
-// Load controllers.
-require ROOT . '/src/controllers/main.php';
-
-// Run.
 $app->run();
