@@ -9,8 +9,6 @@ This document contains information on how to start using the Silex Skeleton.
 Get the project
 ----------------------------
 
-Silex uses `Composer`_ to ease the creation of a new project:
-
 .. code-block:: console
 
     $ git clone https://github.com/bgaze/silex-skeleton.git path/to/install
