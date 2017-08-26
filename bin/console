@@ -1,9 +1,9 @@
 #!/usr/bin/env php
 <?php
-// Define required constants.
+
+// Constants.
+define('CLI', true);
 define('ROOT', __DIR__ . '/..');
-define('CLI', false);
-define('ENV', 'prod');
 
 // Disable time limit.
 set_time_limit(0);

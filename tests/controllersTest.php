@@ -2,10 +2,9 @@
 
 use Silex\WebTestCase;
 
-class controllersTest extends WebTestCase
-{
-    public function testGetHomepage()
-    {
+class controllersTest extends WebTestCase {
+
+    public function testGetHomepage() {
         $client = $this->createClient();
         $client->followRedirects(true);
         $crawler = $client->request('GET', '/');
@@ -14,13 +13,10 @@ class controllersTest extends WebTestCase
         $this->assertContains('Welcome', $crawler->filter('body')->text());
     }
 
-    public function createApplication()
-    {
-        $app = require __DIR__.'/../src/app.php';
-        require __DIR__.'/../config/dev.php';
-        require __DIR__.'/../src/controllers.php';
+    public function createApplication() {
+        $app = require __DIR__ . '/../src/app.php';
         $app['session.test'] = true;
-
         return $this->app = $app;
     }
+
 }

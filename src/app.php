@@ -7,6 +7,13 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
+// Constants.
+foreach (array('ROOT' => __DIR__ . '/..', 'CLI' => false, 'ENV' => 'dev') as $k => $v) {
+    if (!defined($k)) {
+        define($k, $v);
+    }
+}
+
 // Create application.
 $app = new Application();
 
