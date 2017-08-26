@@ -29,7 +29,7 @@ command:
 
 Then, browse to http://localhost:8888/index_dev.php/
 
-> If you want to use your local webserver, please see documentation : https://silex.symfony.com/doc/2.0/web_servers.html
+To use your local webserver, see documentation : https://silex.symfony.com/doc/2.0/web_servers.html
 
 Getting started with Silex
 --------------------------
