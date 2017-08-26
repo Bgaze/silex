@@ -6,12 +6,13 @@ can use as the skeleton for your new applications.
 
 This document contains information on how to start using the Silex Skeleton.
 
-Get the project
+Get the project & install vendors
 ----------------------------
 
 .. code-block:: console
 
     $ git clone https://github.com/bgaze/silex-skeleton.git path/to/install
+    $ composer install
 
 Browsing the Demo Application
 -----------------------------
