@@ -42,14 +42,14 @@ The Silex Skeleton is configured with the following service providers:
 * [WebProfilerServiceProvider][WebProfilerServiceProvider] - Enable the Symfony web debug toolbar and
   the Symfony profiler in your Silex application when developing.
 * [MonologServiceProvider][MonologServiceProvider] - Enable logging in the development environment.
-* [Finder][Finder] - Find files and directories via an intuitive fluent interface.
+* [FinderServiceProvider][FinderServiceProvider] - Find files and directories via an intuitive fluent interface.
 
 [Webserver]: https://silex.symfony.com/doc/2.0/web_servers.html
 [Documentation]: http://silex.sensiolabs.org/documentation
+[Providers]: http://silex.sensiolabs.org/doc/providers.html
 [ValidatorServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/validator.html
 [ServiceControllerServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/service_controller.html
 [TwigServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/twig.html
 [WebProfilerServiceProvider]: http://github.com/silexphp/Silex-WebProfiler
 [MonologServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/monolog.html
-[Providers]: http://silex.sensiolabs.org/doc/providers.html
-[Finder]: https://symfony.com/doc/current/components/finder.html
+[FinderServiceProvider]: https://github.com/bgaze/silex-finder-provider
