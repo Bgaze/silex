@@ -16,7 +16,7 @@ This document contains information on how to start using the Silex Skeleton.
 
 ## Browsing the Demo Application
 
-To configure Silex on your local webserver, see [Documentation](https://silex.symfony.com/doc/2.0/web_servers.html).
+To configure Silex on your local webserver, see [Webserver configuration documentation][Webserver].
 
 To use the PHP built-in web server run :
 
@@ -44,6 +44,7 @@ The Silex Skeleton is configured with the following service providers:
 * [MonologServiceProvider][MonologServiceProvider] - Enable logging in the development environment.
 * [Finder][Finder] - Find files and directories via an intuitive fluent interface.
 
+[Webserver]: https://silex.symfony.com/doc/2.0/web_servers.html
 [Documentation]: http://silex.sensiolabs.org/documentation
 [ValidatorServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/validator.html
 [ServiceControllerServiceProvider]: http://silex.sensiolabs.org/doc/master/providers/service_controller.html
