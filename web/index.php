@@ -1,10 +1,22 @@
 <?php
 
+// Disable error reporting.
 ini_set('display_errors', 0);
 
-require_once __DIR__.'/../vendor/autoload.php';
+// Define application root path.
+define('ROOT', __DIR__ . '/..');
 
-$app = require __DIR__.'/../src/app.php';
-require __DIR__.'/../config/prod.php';
-require __DIR__.'/../src/controllers.php';
+// Load dependencies.
+require_once ROOT . '/vendor/autoload.php';
+
+// Create application.
+$app = require ROOT . '/src/app.php';
+
+// Load configuration.
+require ROOT . '/src/config/prod.php';
+
+// Load controllers.
+require ROOT . '/src/controllers/main.php';
+
+// Run.
 $app->run();
