@@ -10,7 +10,9 @@ This document contains information on how to start using the Silex Skeleton.
 
 ## Install.
 
-        $ composer create-project bgaze/silex-skeleton:dev-master path/to/install
+```
+$ composer create-project bgaze/silex-skeleton:dev-master path/to/install
+```
 
 Then give to PHP write permissions on `/var` directory (for logs and cache).
 
@@ -20,8 +22,10 @@ To configure Silex on your local webserver, see [Webserver configuration documen
 
 To use the PHP built-in web server run :
 
-        $ cd path/to/install
-        $ COMPOSER_PROCESS_TIMEOUT=0 composer run
+```
+$ cd path/to/install
+$ COMPOSER_PROCESS_TIMEOUT=0 composer run
+```
 
 Then, browse to http://localhost:8888/index_dev.php/
 
@@ -69,11 +73,15 @@ It can be used to quick start your app, and as a pattern to build your own layou
 
 Console executable is `/bin/console` file :
 
-        $ php bin/console your:command
+```
+$ php bin/console your:command
+```
 
 To get a list of available commands, just call it with no arguments :
 
-        $ php bin/console
+```
+$ php bin/console
+```
 
 This implementation is shipped with two commands :
 
@@ -94,20 +102,22 @@ Basically, to create a command :
 * Make it extend `Bgaze\Silex\Console\Command\AbstractCommand`.
 * Register it right after the class.
 
+Example :
 
-        <?php
-        # src/commands/mycommand.php
+```php
+<?php
+# src/commands/mycommand.php
 
-        use Bgaze\Silex\Console\Command\AbstractCommand;
+use Bgaze\Silex\Console\Command\AbstractCommand;
 
-        class MyCommand extends AbstractCommand {
+class MyCommand extends AbstractCommand {
 
-            // ...
+    // ...
 
-        }
+}
 
-        $app['console']->add(new DemoCommand());
-
+$app['console']->add(new DemoCommand());
+```
 
 Please see `/src/commands/demo.php` for a more detailed example.  
 Documentation: [ConsoleServiceProvider][10], [Symfony Console Component][12].
