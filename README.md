@@ -85,8 +85,6 @@ Run this command to see your changes into PROD environment.
 
 #### Custom commands.
 
-**Documentation :** [ConsoleServiceProvider][10], [Symfony Console Component][12].
-
 Custom commands reside into `/src/commands` folder.  
 Any PHP file in this folder is automatically loaded when console is invoked.
 
@@ -96,7 +94,6 @@ Basically, to create a command :
 * Make it extend `Bgaze\Silex\Console\Command\AbstractCommand`.
 * Register it right after the class.
 
-Please see `/src/commands/demo.php` for an example :  
 
     <?php
     # src/commands/mycommand.php
@@ -111,6 +108,9 @@ Please see `/src/commands/demo.php` for an example :
 
     $app['console']->add(new DemoCommand());
 
+
+Please see `/src/commands/demo.php` for a more detailed example.  
+Documentation: [ConsoleServiceProvider][10], [Symfony Console Component][12].
 
 
 
