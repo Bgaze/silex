@@ -1,5 +1,16 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    An error occurred.
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="alert alert-danger" role="alert">
+                    <h4 class="alert-heading">Woops!</h4>
+                    <p>
+                        {% block inner %}An error occurred.{% endblock %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
