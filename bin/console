@@ -27,9 +27,11 @@ $app->register(new ConsoleServiceProvider(), ['console.name' => 'My Application'
 
 // Load commands.
 $app['console']->add(new ClearCacheCommand());
-$app['finder']->in(ROOT . '/src/commands')->files()->name('*.php')->sortByName();
-foreach ($app['finder'] as $file) {
-    require_once $file->getRealPath();
+if (is_dir(ROOT . '/src/commands')) {
+    $app['finder']->in(ROOT . '/src/commands')->files()->name('*.php')->sortByName();
+    foreach ($app['finder'] as $file) {
+        require_once $file->getRealPath();
+    }
 }
 
 // Run console.
