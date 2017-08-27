@@ -67,21 +67,21 @@ It can be used to quick start your app, and as a pattern to build your own layou
 
 #### Usage.
 
-Console executable is `/bin/console` and should be invoked like this :
+Console executable is `/bin/console` file :
 
     $ php bin/console your:command
 
-To get a list of available commands, just invok it with no arguments :
+To get a list of available commands, just call it with no arguments :
 
     $ php bin/console
 
 This implementation is shipped with two commands :
 
-* **cache:clear :** erases application cache.  
++ **cache:clear :** erases application cache.  
 Run this command to see your changes into PROD environment.
-* **demo:command :** a pattern for your custom commands.
++ **demo:command :** a pattern for your custom commands.
 
->> If you don't need to build custom commands, you can safely remove `/src/commands` folder. 
+> If you don't need to build custom commands, you can safely remove `/src/commands` folder. 
 
 #### Custom commands.
 
