@@ -59,8 +59,8 @@ Application views reside into `/src/views` folder.
 
 Two templates are included :
 
-* **base.html.twig :** a raw base template defining main blocks in a HTML page.
-* **layout.html.twig :** an implementation of [Bootstrap 4 Stater Template][11].  
+* `base.html.twig` : a raw base template defining main blocks in a HTML page.
+* `layout.html.twig` : an implementation of [Bootstrap 4 Stater Template][11].  
 It can be used to quick start your app, and as a pattern to build your own layout.
 
 ### Console
@@ -77,9 +77,9 @@ To get a list of available commands, just call it with no arguments :
 
 This implementation is shipped with two commands :
 
-+ **cache:clear :** erases application cache.  
+* `cache:clear` : erases application cache.  
 Run this command to see your changes into PROD environment.
-+ **demo:command :** a pattern for your custom commands.
+* `demo:command` : a pattern for your custom commands.
 
 > If you don't need to build custom commands, you can safely remove `/src/commands` folder. 
 
@@ -90,13 +90,13 @@ Run this command to see your changes into PROD environment.
 Custom commands reside into `/src/commands` folder.  
 Any PHP file in this folder is automatically loaded when console is invoked.
 
-Please see `/src/commands/demo.php` for an example.  
-Basically :
+Basically, to create a command :
 
 * Store your command into `/src/commands`.
 * Make it extend `Bgaze\Silex\Console\Command\AbstractCommand`.
 * Register it right after the class.
 
+Please see `/src/commands/demo.php` for an example :  
 
     <?php
     # src/commands/mycommand.php
