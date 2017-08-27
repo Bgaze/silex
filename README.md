@@ -92,19 +92,43 @@ $controller = $app['controllers_factory'];
 // Add actions.
 
 $controller->get('/', function () use ($app) {
-    return $app['twig']->render('demo/home.html.twig', []);
+    // ...
 })->bind('demo.home');
 
 $controller->get('/page1', function () use ($app) {
-    return $app['twig']->render('demo/page1.html.twig', []);
+    // ...
 })->bind('demo.page1');
 
 $controller->get('/page2', function () use ($app) {
-    return $app['twig']->render('demo/page2.html.twig', []);
+    // ...
 })->bind('demo.page2');
 
+$controller->mount('/sub-section', function ($sub) {
+    $controller->get('/', function () use ($app) {
+        // ...
+    })->bind('demo.sub.home');
+
+    $controller->get('/page1', function () use ($app) {
+        // ...
+    })->bind('demo.sub.page1');
+
+    $controller->get('/page2', function () use ($app) {
+        // ...
+    })->bind('demo.sub.page2');
+});
+    
 // Mount controller.
-$app->mount('/', $controller);
+$app->mount('/demo', $controller);
+
+/*
+ * RESULTING URI :
+ * /demo
+ * /demo/page1
+ * /demo/page2
+ * /demo/sub-section
+ * /demo/sub-section/page1
+ * /demo/sub-section/page2
+ */
 ```
 
 Documentation: [Organizing Controllers][13].
