@@ -22,7 +22,8 @@
         "symfony/translation": "~2.8|^3.0",
         "symfony/twig-bridge": "~2.8|^3.0",
         "symfony/validator": "~2.8|^3.0",
-        "bgaze/silex-finder-provider": "^1.0"
+        "bgaze/silex-finder-provider": "dev-master",
+        "bgaze/silex-console-provider": "dev-master"
     },
     "autoload": {
         "psr-0": { "": "src/" }

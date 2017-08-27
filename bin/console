@@ -1,6 +1,10 @@
 #!/usr/bin/env php
 <?php
 
+use Symfony\Component\Console\Input\ArgvInput;
+use Bgaze\Silex\Provider\ConsoleServiceProvider;
+use Bgaze\Silex\Console\Command\ClearCacheCommand;
+
 // Constants.
 define('CLI', true);
 define('ROOT', __DIR__ . '/..');
@@ -12,13 +16,21 @@ set_time_limit(0);
 require_once ROOT . '/vendor/autoload.php';
 
 // Manage console input.
-use Symfony\Component\Console\Input\ArgvInput;
 $input = new ArgvInput();
 define('ENV', $input->getParameterOption(array('--env', '-e'), getenv('SYMFONY_ENV') ?: 'dev'));
 
 // Create application.
-require ROOT . '/src/app.php';
+$app = require ROOT . '/src/app.php';
+
+// Register console provider.
+$app->register(new ConsoleServiceProvider(), ['console.name' => 'My Application', 'console.version' => 'n/a']);
+
+// Load commands.
+$app['console']->add(new ClearCacheCommand());
+$app['finder']->in(ROOT . '/src/commands')->files()->name('*.php')->sortByName();
+foreach ($app['finder'] as $file) {
+    require_once $file->getRealPath();
+}
 
 // Run console.
-$console = require ROOT . '/src/console.php';
-$console->run();
+$app['console']->run();

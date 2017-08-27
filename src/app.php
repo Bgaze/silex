@@ -40,12 +40,10 @@ $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     return new Response($app['twig']->resolveTemplate($templates)->render(['code' => $code]), $code);
 });
 
-// If not in console mode, load controllers.
-if (!CLI) {
-    $app['finder']->in(ROOT . '/src/controllers')->files()->name('*.php')->sortByName();
-    foreach ($app['finder'] as $file) {
-        require_once $file->getRealPath();
-    }
+// Load controllers.
+$app['finder']->in(ROOT . '/src/controllers')->files()->name('*.php')->sortByName();
+foreach ($app['finder'] as $file) {
+    require_once $file->getRealPath();
 }
 
 // Return app.
