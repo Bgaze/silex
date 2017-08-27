@@ -17,8 +17,8 @@ $app->register(new HttpFragmentServiceProvider());
 
 // Twig.
 $app->register(new TwigServiceProvider());
-$app['twig.path'] = array(ROOT . '/src/views');
-$app['twig.options'] = array('cache' => ROOT . '/var/cache/twig');
+$app['twig.path'] = [ROOT . '/src/views'];
+$app['twig.options'] = ['cache' => ROOT . '/var/cache/twig'];
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
     // add custom globals, filters, tags, ...
 

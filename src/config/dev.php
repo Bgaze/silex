@@ -10,9 +10,5 @@ require ROOT . '/src/config/prod.php';
 $app['debug'] = true;
 
 // Register dev specific providers.
-$app->register(new MonologServiceProvider(), array(
-    'monolog.logfile' => ROOT . '/var/logs/silex_dev.log',
-));
-$app->register(new WebProfilerServiceProvider(), array(
-    'profiler.cache_dir' => ROOT . '/var/cache/profiler',
-));
+$app->register(new MonologServiceProvider(), ['monolog.logfile' => ROOT . '/var/logs/silex_dev.log',]);
+$app->register(new WebProfilerServiceProvider(), ['profiler.cache_dir' => ROOT . '/var/cache/profiler',]);
