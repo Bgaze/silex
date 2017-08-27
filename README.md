@@ -161,7 +161,8 @@ class MyCommand extends AbstractCommand {
 $app['console']->add(new DemoCommand());
 ```
 
-Please see `/src/commands/demo.php` for a more detailed example.  
+Please see `/src/commands/demo.php` for a more detailed example.
+
 Documentation: [ConsoleServiceProvider][10], [Symfony Console Component][12].
 
 
