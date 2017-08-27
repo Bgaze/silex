@@ -67,7 +67,49 @@ Two templates are included :
 * `layout.html.twig` : an implementation of [Bootstrap 4 Stater Template][11].  
 It can be used to quick start your app, and as a pattern to build your own layout.
 
-### Console
+### Controllers.
+
+Controllers reside into `/src/controllers` folder.  
+Any PHP file in this folder is automatically loaded.
+
+> The application already contains a main controller mounted on the application root path.
+
+Basically, to add a new controller :
+
+* Use `controllers_factory` to generate a new controller.
+* Add your actions.
+* Mount the controller with the path you want.
+
+Example :
+
+```php
+<?php
+# src/controllers/demo.php
+
+// Create controller.
+$controller = $app['controllers_factory'];
+
+// Add actions.
+
+$controller->get('/', function () use ($app) {
+    return $app['twig']->render('demo/home.html.twig', []);
+})->bind('demo.home');
+
+$controller->get('/page1', function () use ($app) {
+    return $app['twig']->render('demo/page1.html.twig', []);
+})->bind('demo.page1');
+
+$controller->get('/page2', function () use ($app) {
+    return $app['twig']->render('demo/page2.html.twig', []);
+})->bind('demo.page2');
+
+// Mount controller.
+$app->mount('/', $controller);
+```
+
+Documentation: [Organizing Controllers][13].
+
+### Console.
 
 #### Usage.
 
@@ -137,3 +179,4 @@ Documentation: [ConsoleServiceProvider][10], [Symfony Console Component][12].
 [10]: https://github.com/bgaze/silex-console-provider
 [11]: https://v4-alpha.getbootstrap.com/examples/starter-template/
 [12]: http://symfony.com/doc/current/components/console/introduction.html
+[13]: https://silex.symfony.com/doc/2.0/organizing_controllers.html
