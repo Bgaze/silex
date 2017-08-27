@@ -27,11 +27,6 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0.x-dev"
-        }
-    },
     "scripts": {
         "run": [
             "echo 'Started web server on http://localhost:8888'",
