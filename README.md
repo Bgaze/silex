@@ -8,11 +8,11 @@ take you through all the features of Silex.
 
 This document contains information on how to start using the Silex Skeleton.
 
-## Get the project & install vendors
+## Install.
 
-    $ git clone https://github.com/bgaze/silex-skeleton.git path/to/install
-    $ cd path/to/install
-    $ composer install
+    $ composer create-project bgaze/silex-skeleton:dev-master path/to/install
+
+Then give to PHP write permissions on `/var` directory (for logs and cache).
 
 ## Browsing the Demo Application
 
@@ -20,6 +20,7 @@ To configure Silex on your local webserver, see [Webserver configuration documen
 
 To use the PHP built-in web server run :
 
+    $ cd path/to/install
     $ COMPOSER_PROCESS_TIMEOUT=0 composer run
 
 Then, browse to http://localhost:8888/index_dev.php/
